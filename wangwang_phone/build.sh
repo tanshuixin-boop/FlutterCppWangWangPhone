@@ -5,6 +5,5 @@ git clone https://github.com/flutter/flutter.git -b stable --depth 1 $HOME/flutt
 export PATH="$PATH:$HOME/flutter/bin"
 flutter config --enable-web
 flutter create . --platforms=web
-sed -i '/<head>/a <script>window.flutterConfiguration = { canvasKitBaseUrl: "https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.46.0/bin/" };</script>' web/index.html
 flutter pub get
-flutter build web
+flutter build web --no-web-resources-cdn
